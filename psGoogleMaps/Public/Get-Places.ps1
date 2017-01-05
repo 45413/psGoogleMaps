@@ -89,6 +89,7 @@ function Get-Places {
                 foreach ($line in $response.results) {
                     $results += [PSCustomObject] @{
                         "query"=$Search
+                        "Name"=$line.name                    
                         "matchedAddress"=$line.formatted_address.toString()
                         "lat"=$line.geometry.location.lat
                         "long"=$line.geometry.location.lng
@@ -102,6 +103,7 @@ function Get-Places {
                 Write-Verbose "no results found for $Search"
                 $results += [PSCustomObject] @{
                     "query"=$Search
+                    "Name"="No Match"
                     "matchedAddress"="No Match"
                     "lat"="No Match"
                     "long"="No Match"
