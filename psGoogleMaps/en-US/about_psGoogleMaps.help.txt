@@ -1,0 +1,18 @@
+PSTOPIC
+    about_psGoogleMaps
+
+SHORT DESCRIPTION
+   psGoogleMaps allows you to work with the Google Maps API through PowerShell
+
+LONG DESCRIPTION
+    psGoogleMaps allows you to work with the Google Maps API through PowerShell
+
+    You can find API documentation here:
+        https://developers.google.com/maps/documentation/
+
+DETAILED DESCRIPTION
+    This is a rudimentary module that allows querying for arbitrary Google Maps 
+    Api functions.
+
+LINK
+    https://github.com/45413/psGoogleMaps
