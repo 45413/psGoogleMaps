@@ -18,8 +18,8 @@
 
 # Get Configuration
 $script:company = "45413"
-$script:moduleName = (gci $PSCommandPath).BaseName
-$moduleSettings = "$env:LOCALAPPDATA\$($script:company)\$($script:moduleName)\settings.json"
+$script:moduleName = (Get-ChildItem $PSCommandPath).BaseName
+$script:moduleSettings = "$env:LOCALAPPDATA\$($script:company)\$($script:moduleName)\settings.json"
 $script:settings = Get-psGoogleMapsSettings
 
 if ($script:settings) { 
