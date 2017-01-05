@@ -25,11 +25,7 @@ function Get-Geocoding {
         # Address to geocode
         [Parameter(Mandatory=$true,Position=0,ValueFromPipeline=$true)]
         [string[]]
-        $Addresses,
-        # Google Maps API key
-        [Parameter(Mandatory=$false)]
-        [string]
-        $ApiKey
+        $Addresses
     )
     
     begin {
@@ -44,7 +40,9 @@ function Get-Geocoding {
             if ($script:settings.apiKey) {
                 $parameters += "&key=$($script:settings.apiKey)"         
             }            
-    
+
+            Write-Verbose "API Call: $($urlPrefix)$($parameters)"
+
             $response = Invoke-RestMethod -Uri "$($urlPrefix)$($parameters)" -Method Get -Verbose:$false       
             $results = @()
 
